@@ -19,7 +19,12 @@ public class ManejadorCliente extends Thread {
             ServidorChat.añadirEscritor(salida);
             String mensaje;
             while ((mensaje = entrada.readLine()) != null) {
-                System.out.println("Mensaje recibido: " + mensaje);
+                // El servidor recibe datos cifrados en Base64.
+                String mensajeDesencriptado = GestorSeguridad.desencriptar(mensaje);
+                System.out.println("Mensaje recibido cifrado: " + mensaje);
+                System.out.println("Mensaje descifrado en consola: " + mensajeDesencriptado);
+                
+                // Difundimos el mensaje cifrado de vuelta
                 ServidorChat.difundirMensaje(mensaje);
             }
         } catch (IOException e) {
