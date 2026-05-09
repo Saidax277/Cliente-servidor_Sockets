@@ -6,7 +6,7 @@ import java.util.Base64;
 
 public class GestorSeguridad {
 
-    private static final String CLAVE_SECRETA = "Clav3S3cr3t412345"; 
+    private static final String CLAVE_SECRETA = "Clav3S3cr3t41234"; 
     private static final String ALGORITMO = "AES";
 
     /**
